@@ -16,9 +16,6 @@ long lastInterval;
 int motionClampAngle = 30;  // 30 degrees for range of motion, determined by manual testing
 float rightWheelSpeed, leftWheelSpeed;
 
-int currentTime = 0;
-int sendDelay = 200; // Send every second
-
 void setup() {
 
   Serial.begin(1000000);
@@ -34,7 +31,6 @@ void setup() {
 
   calibrateIMU(250, 250);
   lastTime = micros();
-  currentTime = millis();
 }
 
 /*
@@ -130,26 +126,21 @@ void calculateWheelSpeeds() {
   else
     rightWheelSpeed *= targetPercentage;
   
-  // Since the robot is trash scale the speed down
+  // Scale the speed , theoretically this could be a factor of at least 10
+  // so the data is between [-10;10]
+  // however since  the robot is trash scale the speed down
   leftWheelSpeed *= 1.5;
   rightWheelSpeed *= 1.5;
-
-  //Serial.print(leftWheelSpeed);
-  //Serial.print(",");
-  //Serial.println(rightWheelSpeed);
 }
 
 void sendSteeringSpeeds(){
- // if(millis() - currentTime > sendDelay){
-    currentTime = millis();
-    // Create a message in the format "value1,value2"
-    String message = String(leftWheelSpeed) + "," + String(rightWheelSpeed);
+  // Create a message in the format "value1,value2"
+  String message = String(leftWheelSpeed) + "," + String(rightWheelSpeed);
 
-    // Send the message via Serial1
-    Serial1.println(message);
+  // Send the message via Serial1
+  Serial1.println(message);
 
-    // Print the sent message to the USB serial for debugging
-    Serial.println(message);
-  //}
+  // Print the sent message to the USB serial for debugging
+  Serial.println(message);
   
 }
