@@ -17,7 +17,10 @@ def main():
         print(f"Failed to open serial port COM{port}: {e}")
         return
 
-    requestCounter = 0
+    # The robot cannot handle requests sent too frequently
+    request_attempt_counter = 0  # Counts how many times data has been read
+    send_request_after_attempts = 30  # Number of read attempts before sending a request
+
     try:
         while True:
             line = serialCon.readline().decode('utf-8').strip()
@@ -30,9 +33,9 @@ def main():
                         'left': velocityL,
                         'right': velocityR
                     }
-                    requestCounter+=1
-                    if requestCounter >= 30:
-                        requestCounter = 0
+                    request_attempt_counter+=1
+                    if request_attempt_counter >= send_request_after_attempts:
+                        request_attempt_counter = 0
                         response = requests.post(url, json=data)
                         if response.status_code != 200:
                             print(f"Failed to send data: {response.status_code} - {response.text}")
