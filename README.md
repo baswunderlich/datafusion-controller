@@ -19,7 +19,7 @@ Before you begin, ensure you have the following:
 
 - Arduino Nano
 - Arduino IDE
-- Manchester Robotics Puzzlebot Jackson Edition
+- Manchester Robotics robot Jackson Edition
 
 ## Setup Instructions
 
@@ -27,7 +27,7 @@ Before you begin, ensure you have the following:
 
 1. Connect your Arduino Nano to your computer via USB.
 2. Open the Arduino IDE.
-3. Open the `crazyDataStuffFilter.ino` file located in the `arduino` directory of this repository.
+3. Open the `crazyDataStufffWithFilter.ino` file located in the `crazyDataStufffWithFilter` directory of this repository.
 4. Select the correct board and port from the Tools menu.
 5. Click the upload button to flash the Arduino Nano.
 
@@ -48,7 +48,7 @@ Before you begin, ensure you have the following:
     ```
 5. Start the Python script:
     ```bash
-    hypercorn robot_go_brrr:app -b IP:8000
+    hypercorn robot_go_brrr:app -b <IP>:8000
     ```
 
 ### 3. Configuring the Firewall
