@@ -2,7 +2,7 @@ Here is the updated README with an additional setup step to start the "NanoToApi
 
 # Wireless Robot Controller
 
-This project is designed to control a robot wirelessly using an Arduino Nano. The robot is from Manchester Robotics, and the setup involves running a Python script on an Nvidia Jetson board and configuring the firewall to ensure the API is reachable from outside. The Arduino Nano is flashed with a program to receive the controller data via WiFi and control the robot accordingly.
+This project is designed to control a robot wirelessly using an Arduino Nano. The robot is from Manchester Robotics, and the setup involves running a Python script on an Nvidia Jetson board and configuring the firewall to ensure the API is reachable from outside. The Arduino Nano is flashed with a program to send the controller data via WiFi and control the robot accordingly.
 
 ## Table of Contents
 
