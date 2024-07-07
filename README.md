@@ -22,6 +22,7 @@ Before you begin, ensure you have the following:
 
 - Arduino Nano
 - Arduino IDE
+- Python on your laptop/computer
 - Manchester Robotics Puzzlebot Jackson Edition
 
 ## Setup Instructions
@@ -87,7 +88,7 @@ For that you only need to start the NanoToApi.py script, make sure to edit the s
 
 ## Usage
 
-Once the setup is complete, you can control the robot wirelessly. The controller data is sent via WiFi to the Arduino Nano, which in turn controls the robot's movements. Ensure the Nvidia Jetson board and the Arduino Nano are both connected to the same WiFi network.
+Once the setup is complete, you can control the robot wirelessly. The controller data is sent via WiFi to the Arduino Nano, which in turn controls the robot's movements. Ensure the Nvidia Jetson board and the Arduino Nano are both connected to the same WiFi network. It should be noted that the current version deals with some delay between control and actual reaction of the robot.
 
 ## License
 
