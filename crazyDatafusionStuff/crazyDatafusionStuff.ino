@@ -6,7 +6,7 @@ float accelX,            accelY,             accelZ,            // units m/s/s i
       gyroX,             gyroY,              gyroZ,             // units dps (degrees per second)
       gyroDriftX,        gyroDriftY,         gyroDriftZ,        // units dps
       accRoll,           accPitch,           accYaw,            // units degrees (roll and pitch noisy, yaw not possible)
-      complementaryRoll, complementaryPitch, complementaryYaw;  // units degrees (excellent roll, pitch, yaw minor drift)
+      complementaryRoll, complementaryPitch;  // units degrees (excellent roll, pitch)
 
 // Variables for the calibration
 long lastTime;
@@ -99,7 +99,6 @@ void doSensorFusion() {
 
   complementaryRoll = complementaryRoll + ((gyroX - gyroDriftX) / lastFrequency);
   complementaryPitch = complementaryPitch + ((gyroY - gyroDriftY) / lastFrequency);
-  complementaryYaw = complementaryYaw + ((gyroZ - gyroDriftZ) / lastFrequency);
 
   complementaryRoll = 0.70 * complementaryRoll + 0.30 * accRoll;
   complementaryPitch = 0.70 * complementaryPitch + 0.30 * accPitch;
