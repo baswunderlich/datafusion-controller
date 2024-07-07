@@ -28,9 +28,11 @@ Before you begin, ensure you have the following:
 
 ### 1. Flashing the Arduino
 
+This is supposed to be done with the Arduino IDE
+
 1. Connect your Arduino Nano to your computer via USB.
 2. Open the Arduino IDE.
-3. Open the crazyDataStufffWithFilter.ino file located in the crazyDataStufffWithFilter directory of this repository.
+3. Open the crazyDatafusionStuff.ino file located in the crazyDatafusionStuff directory of this repository.
 4. Select the correct board and port from the Tools menu.
 5. Click the upload button to flash the Arduino Nano.
 
@@ -41,14 +43,14 @@ Before you begin, ensure you have the following:
     
 
     ```bash
-    git clone https://github.com/yourusername/wireless-robot-controller.git
+    git clone https://github.com/yourusername/datafusion-controller.git
     ```
 
 3. Navigate to the project directory:
     
 
     ```bash
-    cd wireless-robot-controller
+    cd datafusion-controller
     ```
 
 4. Install the required Python packages:
@@ -89,4 +91,4 @@ Once the setup is complete, you can control the robot wirelessly. The controller
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+This project is licensed under the MIT License.

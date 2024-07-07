@@ -65,4 +65,4 @@ Once the setup is complete, you can control the robot wirelessly. The controller
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+This project is licensed under the MIT License.
