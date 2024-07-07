@@ -101,8 +101,8 @@ void doSensorFusion() {
   complementaryPitch = complementaryPitch + ((gyroY - gyroDriftY) / lastFrequency);
   complementaryYaw = complementaryYaw + ((gyroZ - gyroDriftZ) / lastFrequency);
 
-  complementaryRoll = 0.98 * complementaryRoll + 0.02 * accRoll;
-  complementaryPitch = 0.98 * complementaryPitch + 0.02 * accPitch;
+  complementaryRoll = 0.80 * complementaryRoll + 0.20 * accRoll;
+  complementaryPitch = 0.80 * complementaryPitch + 0.20 * accPitch;
 }
 
 void calculateWheelSpeeds() {
